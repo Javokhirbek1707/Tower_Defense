@@ -10,9 +10,12 @@ public class TowerHealth : MonoBehaviour
     [SerializeField]
     private TowerSpot _occupiedSpot;
 
+    public bool isPlaced = false;
+
     public void Placed()
     {
         gameObject.tag = "Turret";
+        isPlaced = true;
     }
 
     public void SetOccupiedSpot(TowerSpot spot)

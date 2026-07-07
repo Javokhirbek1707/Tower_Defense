@@ -38,6 +38,7 @@ public class TowerSelector : MonoBehaviour
                 }
             }
         }
+
     }
 
     private void ShowPopupForTower(GameObject tower)

@@ -45,6 +45,12 @@ public class GatlingAttackTower : MonoBehaviour
 
     void Update()
     {
+        TowerHealth health = GetComponentInParent<TowerHealth>();
+        if (health == null || health.isPlaced == false)
+        {
+            return;
+        }
+
         if (_mainTarget != null && _mainTarget.activeInHierarchy == false)
         {
             _mainTarget = null;
