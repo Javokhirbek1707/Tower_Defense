@@ -29,6 +29,9 @@ public class GatlingAttackTower : MonoBehaviour
 
     private bool _attackCD = false;
 
+    [SerializeField]
+    private ParticleSystem[] _muzzleFlashes;
+
     void Start()
     {
         _audioSource = GetComponent<AudioSource>();
@@ -73,6 +76,10 @@ public class GatlingAttackTower : MonoBehaviour
             {
                 _attackCD = true;
                 _mainTarget.GetComponent<EnemyAI>().TakeDamage(_damage);
+                foreach (var flash in _muzzleFlashes)
+                {
+                    flash.Play();
+                }
                 StartCoroutine(AttackCooldown());
             }
         }

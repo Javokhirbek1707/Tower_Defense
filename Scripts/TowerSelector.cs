@@ -48,10 +48,12 @@ public class TowerSelector : MonoBehaviour
         if (tower.GetComponent<GatlingTowerUpgrade>() != null)
         {
             _upgradeGunPopup.SetActive(true);
+            _dismantlePopup.SetActive(true);
         }
         else if (tower.GetComponent<MissileTowerUpgrade>() != null)
         {
             _upgradeMissilePopup.SetActive(true);
+            _dismantlePopup.SetActive(true);
         }
         else
         {
@@ -112,7 +114,7 @@ public class TowerSelector : MonoBehaviour
             return;
         }
 
-        UIManager.Instance.AddWarFunds(250);
+        UIManager.Instance.AddWarFunds(150);
         Destroy(_selectedTower);
 
         _selectedTower = null;
